@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  margin: 0;
+  align-items: center;
+}
+.lists {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+.list {
+  width: 300px;
+  background-color: wheat;
+  margin-left: 8px;
+  border: 1px solid yellow;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardcover {
+  height: 150px;
+  width: 100%;
+}
+
+.cardcontent {
+  /* Take available height */
+  flex: 1;
+}

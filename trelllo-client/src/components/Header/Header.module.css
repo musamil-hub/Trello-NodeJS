@@ -1,0 +1,17 @@
+.container {
+  /* Content is centered horizontally */
+  align-items: center;
+  display: flex;
+
+  /* Reset styles */
+  list-style-type: none;
+  margin: 0;
+}
+.itemcenter {
+  margin-left: auto;
+}
+
+.itemright {
+  /* Sticks to the right */
+  margin-left: auto;
+}
