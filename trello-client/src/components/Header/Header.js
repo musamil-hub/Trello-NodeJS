@@ -1,5 +1,8 @@
+import { Button } from "@chakra-ui/react";
 import React from "react";
+import PostCardForm from "../Form/PostCardForm";
 import classes from "./Header.module.css";
+
 const Header = () => {
   return (
     <div>
@@ -8,7 +11,10 @@ const Header = () => {
           <h3>Trello</h3>
         </li>
         <li className={classes.itemright}>
-          <a href="">Add Task</a>
+          <Button>
+            {/* <PostCardForm /> */}
+            Add Form
+          </Button>
         </li>
       </ul>
     </div>

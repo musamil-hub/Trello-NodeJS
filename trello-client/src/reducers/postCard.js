@@ -1,33 +1,33 @@
 import { ACTION_TYPES } from "../actions/postCard";
 
-const initialState = {
-  Dummy: {
-    todo: {
-      title: "Todo",
-      list: [],
-    },
-    doing: {
-      title: "Doing",
-      list: [],
-    },
-    done: {
-      title: "Done",
-      list: [],
-    },
+const Dummy = {
+  todo: {
+    title: "Todo",
+    items: [],
+  },
+  doing: {
+    title: "Doing",
+    items: [],
+  },
+  done: {
+    title: "Done",
+    items: [],
   },
 };
-export const postCard = (state = initialState, action) => {
+export const postCard = (state = Dummy, action) => {
   switch (action.type) {
     case ACTION_TYPES.FETCH_ALL:
       let todoarr = [];
       let doingarr = [];
       let donearr = [];
       for (let i in action.payload) {
+        const id = action.payload[i]._id;
         const title = action.payload[i].title;
         const description = action.payload[i].description;
         const types = action.payload[i].types;
         const date = action.payload[i].date;
         const newdata = {
+          id,
           title,
           description,
           types,
@@ -36,27 +36,31 @@ export const postCard = (state = initialState, action) => {
         if (types === "todo") {
           todoarr.push(newdata);
         } else if (types === "doing") {
-          console.log("doing");
           doingarr.push(newdata);
         } else {
-          console.log("done");
           donearr.push(newdata);
         }
+        // if (types === "todo") {
+        //   console.log(action.payload[i]);
+        //   todoarr.push(action.payload[i]);
+        // } else if (types === "doing") {
+        //   doingarr.push(action.payload[i]);
+        // } else {
+        //   donearr.push(action.payload[i]);
+        // }
       }
       return {
-        Dummy: {
-          todo: {
-            title: "Todo",
-            list: todoarr,
-          },
-          doing: {
-            title: "Doing",
-            list: doingarr,
-          },
-          done: {
-            title: "Done",
-            list: donearr,
-          },
+        todo: {
+          title: "Todo",
+          items: todoarr,
+        },
+        doing: {
+          title: "Doing",
+          items: doingarr,
+        },
+        done: {
+          title: "Done",
+          items: donearr,
         },
       };
     default:
