@@ -4,11 +4,11 @@ const baseURL = "http://localhost:4040/";
 export default {
   postCard(url = baseURL + "postcards/") {
     return {
-      fetchAll: async () => await axios.get(url),
+      fetchAll: () => axios.get(url),
       fetchById: (id) => axios.get(url + id),
-      create: (newRecord) => axios.get(url, newRecord),
-      update: (id, updateRecord) => axios.get(url + id, updateRecord),
-      delete: (id) => axios.get(url + id),
+      create: (newRecord) => axios.post(url, newRecord),
+      update: (id, updateRecord) => axios.put(url + id, updateRecord),
+      delete: (id) => axios.delete(url + id),
     };
   },
 };

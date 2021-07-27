@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import * as actions from "../../../actions/postCard";
-import Cards from "../Cards/Cards";
-import { Container, Flex, Heading, List, Stack } from "@chakra-ui/react";
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import { Progress } from "@chakra-ui/react";
-
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../../actions/postCard';
+import { Container, Flex, Heading, List, Stack } from '@chakra-ui/react';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import TrelloCards from '../Cards/TrelloCards';
 const onDragEnd = (result, columns, setColumns) => {
   if (!result.destination) return;
   const { source, destination } = result;
@@ -52,33 +50,33 @@ const Lists = (props) => {
   }, [data]);
 
   return (
-    <Container maxW="1000px">
-      <Flex justify="space-between" height="90vh" align="center">
+    <Container maxW='1000px'>
+      <Flex justify='space-between' height='90vh' align='center'>
         <DragDropContext
           onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
         >
           {Object.entries(columns).map(([id, column]) => {
             return (
-              <Stack width="300px" key={`${column.title}+${id} `}>
-                <Heading fontSize="3xl" color="yellow.700" textAlign="center">
+              <Stack width='300px' key={`${column.title}+${id} `}>
+                <Heading fontSize='3xl' color='yellow.700' textAlign='center'>
                   {column.title}
                 </Heading>
                 <Droppable droppableId={id} key={id}>
                   {(provided, snapshot) => {
                     return (
                       <List
-                        p="4"
-                        minH="70vh"
-                        boxShadow="xl"
-                        borderRadius="md"
+                        p='4'
+                        minH='70vh'
+                        boxShadow='xl'
+                        borderRadius='md'
                         {...provided.droppableProps}
                         ref={provided.innerRef}
-                        bg={snapshot.isDraggingOver ? "lightblue" : "lightgrey"}
+                        bg={snapshot.isDraggingOver ? 'lightblue' : 'lightgrey'}
                       >
                         {column.items.map((record, index) => {
                           console.log(record);
                           return (
-                            <Cards
+                            <TrelloCards
                               key={record.id}
                               data={record}
                               index={index}

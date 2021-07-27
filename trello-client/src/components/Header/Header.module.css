@@ -1,17 +1,29 @@
 .container {
-  /* Content is centered horizontally */
   align-items: center;
   display: flex;
-
   /* Reset styles */
   list-style-type: none;
-  margin: 0;
-}
-.itemcenter {
-  margin-left: auto;
+  margin: 0 0 5px 0;
+  height: 50px;
 }
 
 .itemright {
   /* Sticks to the right */
   margin-left: auto;
+}
+
+article {
+  background: linear-gradient(to right, hsl(98 100% 62%), hsl(204 100% 59%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.span {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.logo {
+  height: 25px;
 }

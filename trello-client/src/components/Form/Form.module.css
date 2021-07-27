@@ -1,0 +1,25 @@
+.formControl {
+  margin-top: 10px;
+  width: 320px;
+}
+
+.buttonactions {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.button {
+  padding: 0;
+  background-color: rgba(62, 218, 96, 0.829);
+  height: 30px;
+  width: 70px;
+  border: none;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: black;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: rgba(62, 218, 96, 0.63);
+}

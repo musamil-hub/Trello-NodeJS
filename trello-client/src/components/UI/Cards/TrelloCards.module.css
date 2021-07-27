@@ -1,0 +1,67 @@
+* {
+  cursor: default;
+}
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+
+.form {
+  width: 205px;
+}
+.action {
+  margin-left: auto;
+  display: flex;
+}
+
+.edit {
+  cursor: pointer;
+  /* margin-left: 150px; */
+  color: rgba(5, 5, 5, 0.363);
+}
+
+.delete {
+  cursor: pointer;
+  margin-left: 10px;
+  color: rgba(5, 5, 5, 0.527);
+}
+
+.icon {
+  size: 5px;
+}
+
+.layout {
+  align-items: start;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: ghostwhite;
+}
+
+.layoutcard {
+  display: grid;
+  grid-gap: 2px;
+}
+
+.title {
+  text-transform: capitalize;
+  color: rgb(10, 10, 10);
+}
+.description {
+  font-size: 80%;
+  color: rgba(78, 77, 77, 0.623);
+}
+
+.date {
+  text-transform: capitalize;
+  font-size: 10px;
+  padding: 3px 3px;
+  color: rgb(0, 255, 55);
+}
+.control {
+  display: flex;
+  height: 20px;
+  margin-top: 5px;
+  background-color: ghostwhite;
+}
