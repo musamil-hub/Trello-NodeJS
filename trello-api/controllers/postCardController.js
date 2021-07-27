@@ -13,11 +13,13 @@ exports.getPosts = (req, res, next) => {
 };
 
 exports.createPosts = (req, res, next) => {
+  console.log(req, res);
   const newCard = new PostCards({
     title: req.body.title,
     description: req.body.description,
-    types: req.body.types,
+    assign_to: req.body.assign_to,
     date: req.body.date,
+    color: req.body.color,
   });
   newCard.save((err, docs) => {
     if (!err) res.send(docs);
@@ -35,8 +37,9 @@ exports.updatePosts = (req, res, next) => {
   const updateCard = {
     title: req.body.title,
     description: req.body.description,
-    types: req.body.types,
+    assign_to: req.body.assign_to,
     date: req.body.date,
+    color: req.body.color,
   };
   PostCards.findByIdAndUpdate(
     req.params.id,
